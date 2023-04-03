@@ -1,3 +1,4 @@
+File not found : "exemplo4.jflex"
 Token [classe: cInt, ValorIdentificador: 125, linha: 1, coluna: 1]
 Token [classe: cIdent, ValorIdentificador: teste, linha: 2, coluna: 1]
 Token [classe: cIdent, ValorIdentificador: xpt421z, linha: 3, coluna: 1]
@@ -21,4 +22,3 @@ Token [classe: cParEsq, null, linha: 10, coluna: 3]
 Token [classe: cParDir, null, linha: 10, coluna: 5]
 Token [classe: cParDir, null, linha: 10, coluna: 6]
 Token [classe: cParDir, null, linha: 10, coluna: 7]
-null

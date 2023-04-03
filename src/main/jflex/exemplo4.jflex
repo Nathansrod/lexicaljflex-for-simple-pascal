@@ -1,6 +1,5 @@
 //exemplo04.jflex
-%state COMMENT
-%state STRING
+
 
 enum Classe {
     cInt,               //ok
@@ -152,7 +151,8 @@ class Token {
 }
 
 %%
-
+%state COMMENT
+%state STRING
 // %standalone
 %class Lexico
 // %function getToken
@@ -238,7 +238,7 @@ public static void main(String[] argv) {
 %}
 
 %%
-
+<YYINITIAL> {
 {INTEIRO}       { return new Token(yyline + 1, yycolumn + 1, Classe.cInt, new Valor(yytext())); }
 {IDENTIFICADOR} { return new Token(yyline + 1, yycolumn + 1, Classe.cIdent, new Valor(yytext())); }
 {ESPACO}        { /* ignorar */ }
@@ -261,10 +261,18 @@ public static void main(String[] argv) {
 "<"             { return new Token(yyline + 1, yycolumn + 1, Classe.cMenor); }
 "="             { return new Token(yyline + 1, yycolumn + 1, Classe.cIgual); }
 EOF             { return new Token(yyline + 1, yycolumn + 1, Classe.cEOF); }
+"{"             { yybegin(COMMENT); }
+"'"            { yybegin(STRING); }
+}
 
-"/*"                 { yybegin(COMMENT); }
-<COMMENT> "*"        {}
-<COMMENT> [^"*/"]    {}
-<COMMENT> "*/"       { System.out.print("Ignored comment");
+<COMMENT> "{"       {}
+<COMMENT> [^"}"]    {}
+<COMMENT> "}"       { System.out.println("Ignored comment");
                        yybegin(YYINITIAL); }
+
+<STRING> "'"       {}
+<STRING> [^"'"]    {}
+<STRING> "'"       { return new Token(yyline + 1, yycolumn + 1, Classe.cString, new Valor(yytext()));;
+                       yybegin(YYINITIAL); }
+
 

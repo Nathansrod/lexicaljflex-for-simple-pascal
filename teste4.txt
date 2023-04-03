@@ -1,3 +1,4 @@
+'teste string 0'
 125
 teste
 xpt421z
@@ -7,4 +8,12 @@ xpt421z
 <=
 : ; , . , :=
 + - / *
+{teste de comentario blab alb ls bl skd almdalksmdaslkmdklasdm}
 ((( )))
+'teste string' 'teste string 2'
+
+
+"teste string 3"
+
+{"comentariooooo"}
+identifier
