@@ -1,0 +1,10 @@
+//exemplo02.jflex
+
+%%
+
+%standalone
+
+%%
+
+a(a | b)* { System.out.print("Começa com a"); }
+b(a | b)* { System.out.print("Começa com b"); }

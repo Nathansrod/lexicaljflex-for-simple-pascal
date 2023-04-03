@@ -1,0 +1,7 @@
+//teste2.txt
+aaa aaaaaaaaa
+bbb bbbbb bb bb
+ababa babab ab
+baba bababa ba
+baaaa aaaa aaa
+abbb bbbbb bbb
